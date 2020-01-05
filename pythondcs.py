@@ -14,6 +14,7 @@ class PythonDCS:
     def openDCS(self):
         self.DCSsock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
         self.DCSsock.connect('/var/run/dsf/dcs.sock')
+        self.DCSsock.setblocking(True)
         j=json.dumps({"mode":"command"}).encode()
         self.DCSsock.send(j)
         r=self.DCSsock.recv(128).decode()
@@ -36,6 +37,10 @@ class PythonDCS:
         j=json.dumps({"code": cmd,"channel": 0,"command": "SimpleCode"}).encode()
         self.DCSsock.send(j)
         r=self.DCSsock.recv(2048).decode()
+        if ('Error' in r):
+          print('Error detected, stopping script')
+          print(r)
+          exit(8)
         return(r)
 
     def getPos(self):
