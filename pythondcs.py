@@ -39,6 +39,7 @@ class PythonDCS:
         r=self.DCSsock.recv(2048).decode()
         if ('Error' in r):
           print('Error detected, stopping script')
+          print(j)
           print(r)
           exit(8)
         return(r)
