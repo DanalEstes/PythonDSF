@@ -24,7 +24,6 @@ This repository also contains a sample script that is designed to measure tool-t
 It assumes that a plate exists with known coordinates attached to the bed.  This plate has a flat area, minimum 15x15mm for touch probing Z, and contains a round hole with crisp 90 deg edges between the wall of the hold and the surface. This hole should be about 15mm in diameter. This plate must be grounded. The nozzle of each tool must be connected via a wire to io4.in on the main 6HC board. 
 
 You will then need to edit the coordinates of the Z touch area, and the center of the hole, into the begining of the ToolOffset.py script.
-Note: As of 1/2/2020 these constants are spread around the script. I intend to abstract them to the beginning of the script, making them easier to change, at some point in time. 
 
 The first several times you run this, be extra ready to E-Stop the printer. 
 
