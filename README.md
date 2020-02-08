@@ -28,3 +28,7 @@ Note: As of 1/2/2020 these constants are spread around the script. I intend to a
 
 The first several times you run this, be extra ready to E-Stop the printer. 
 
+### Zonly.py
+
+Like ToolOffset, but only does Z.  Perhaps you will use a camera for XY. 
+
