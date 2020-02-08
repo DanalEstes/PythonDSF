@@ -33,7 +33,7 @@ class PythonDCS:
         self.DCSsock.close()
 
     def gCode(self,cmd=''):
-        print(cmd)
+        #print(cmd)
         j=json.dumps({"code": cmd,"channel": 0,"command": "SimpleCode"}).encode()
         self.DCSsock.send(j)
         r=self.DCSsock.recv(2048).decode()
@@ -47,7 +47,7 @@ class PythonDCS:
     def getPos(self):
       result = json.loads(self.gCode('M408'))['result']
       pos = json.loads(result)['pos']
-      print('getPos = '+str(pos))
+      #print('getPos = '+str(pos))
       return pos
 
     def resetEndstops(self):
