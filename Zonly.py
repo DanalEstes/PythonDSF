@@ -14,7 +14,7 @@
 # Edit these for your printer.
 tl = [0,1]            # List of tools to be compared
 yc = 225              # Y line that will clear parked tools when moving in X
-xz = 290              # X coord of flat plate to probe Z. 15x15mm area recommended.
+xz = 288              # X coord of flat plate to probe Z. 15x15mm area recommended.
 yz = 285              # Y coord of flat plate to probe Z. 15x15mm area recommended. 
 zo = -3.1             # Offset from flat plate area probe Z to actual Z0 on print surface.                       
 # Normally, change nothing below this line.

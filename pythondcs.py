@@ -57,11 +57,8 @@ class PythonDCS:
       self.gCode('M574 U1 S1 P"nil"')
       self.gCode('M558 K0 P5 C"nil"')  
       c = open('/opt/dsf/sd/sys/config.g','r')
-      for each in [line for line in c if 'M574' in line]: self.gCode(each)
-      c.close()    
-      c = open('/opt/dsf/sd/sys/config.g','r')
-      for each in [line for line in c if 'M558' in line]: self.gCode(each)
-      c.close()    
+      for each in [line for line in c if (('M574' in line) or ('M558' in line) or ('G31' in line))]: self.gCode(each)
+      c.close()
 
 
     def resetAxisLimits(self):
